@@ -35,16 +35,11 @@ hbs.registerHelper('getCurrentYear', () => new Date().getFullYear());
 
 hbs.registerHelper('screamIt', (text) => text.toUpperCase());
 
-const pageProperties = {
-  pageTitle: 'Home Page',
-  welcomeMessage: 'Welcome to this page!'
-}
-
 app.get('/', (req, res) => {
   // res.send('<h1>Hello Express</h1>');
   res.render('home.hbs', {
     pageTitle: 'Home Page',
-    welcomeMessage: 'Some Text here',
+    welcomeMessage: 'Welcome to this page!',
   })
 });
 
@@ -52,9 +47,17 @@ app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
     currentYear: new Date().getFullYear(),
-    welcomeMessage: 'Welcome to this page!',
+    welcomeMessage: 'Some Text Here',
   });
 });
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Project Page',
+    currentYear: new Date().getFullYear(),
+    welcomeMessage: 'Projects posted here',
+  })
+})
 
 app.get('/bad', (req, res) => {
   res.send({
