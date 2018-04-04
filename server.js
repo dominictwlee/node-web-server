@@ -25,9 +25,9 @@ app.use((req, res, next) => {
 });
 
 //  Render maintenance page
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-})
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// })
 
 app.use(express.static(__dirname + '/public'));
 
